@@ -1,0 +1,6 @@
+# Keep Unix line endings for files that run inside Linux (Git on Windows would otherwise
+# convert them to CRLF and break the scripts: "$'\r': command not found").
+*.sh        text eol=lf
+Dockerfile  text eol=lf
+*.conf      text eol=lf
+*.yml       text eol=lf

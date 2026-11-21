@@ -92,6 +92,31 @@ Turn this off on any public server.
 
 To enable the AI assistant, put an Anthropic API key in `.env` (`ANTHROPIC_API_KEY=...`) and restart.
 
+## Live updates: GitHub → running website
+
+To have the website update itself whenever new code is pushed to GitHub, start it with one command
+instead of `docker compose up`:
+
+```bash
+git clone https://github.com/<you>/rigradar.git && cd rigradar    # once
+bash scripts/live.sh                                              # Git Bash / Linux / macOS
+```
+
+```
+push to GitHub ──► scripts/auto-pull.sh (checks every 15 s, git pull)
+                        └─► docker compose --watch applies the changed files
+                              Python code   → copied into the containers + restart   (seconds)
+                              React code    → frontend image rebuilt                 (~30 s)
+                              requirements  → backend image rebuilt                  (~1-2 min)
+```
+
+Database migrations (Alembic) run automatically each time the API restarts. Keep the terminal open;
+Ctrl+C stops both the updater and the website. If you edit files in that folder yourself, `git pull`
+may refuse to fast-forward - commit or discard your edits first.
+
+> This deploys *whatever is on `main`*. Run `pytest` before pushing, and never point the updater at a
+> repository other people can push to.
+
 ## Local development (without Docker)
 
 You need Python 3.12+, Node 20+, PostgreSQL 16 and Redis 7
