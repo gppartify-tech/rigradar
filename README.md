@@ -29,6 +29,8 @@ with an AI assistant, and lets them sell their own used parts.
   every user has a public profile with their listings. Linked catalog products show how much a buyer
   saves versus buying new.
 - **Admin dashboard** – scrape history, per-store stats and a "scrape now" button.
+- **Dark mode** – follows your system setting; the sun/moon button in the header switches it and
+  remembers your choice. The price chart uses its own validated dark-mode colours.
 
 ## The three stores (and why these three)
 

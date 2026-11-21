@@ -32,7 +32,7 @@ export default function ListingPage() {
 
   return (
     <div className="container-page py-8">
-      <Link to="/marketplace" className="text-sm text-slate-500 hover:text-indigo-700">← Marketplace</Link>
+      <Link to="/marketplace" className="text-sm text-slate-500 dark:text-slate-400 hover:text-indigo-700 dark:hover:text-indigo-300">← Marketplace</Link>
       <div className="mt-4 grid gap-6 lg:grid-cols-[1.2fr_1fr]">
         <div>
           <div className="card overflow-hidden">
@@ -49,7 +49,7 @@ export default function ListingPage() {
           )}
           <div className="card mt-6 p-5">
             <h2 className="font-semibold">Description</h2>
-            <p className="mt-2 whitespace-pre-wrap text-sm leading-relaxed text-slate-700" dir="auto">{listing.description || "No description."}</p>
+            <p className="mt-2 whitespace-pre-wrap text-sm leading-relaxed text-slate-700 dark:text-slate-200" dir="auto">{listing.description || "No description."}</p>
           </div>
         </div>
 
@@ -61,7 +61,7 @@ export default function ListingPage() {
             <h1 className="text-2xl font-bold tracking-tight" dir="auto">{listing.title}</h1>
             <div className="mt-2 flex items-baseline gap-2">
               <span className="text-3xl font-extrabold">{formatPrice(listing.price)}</span>
-              {listing.negotiable && <span className="text-sm text-slate-500">negotiable</span>}
+              {listing.negotiable && <span className="text-sm text-slate-500 dark:text-slate-400">negotiable</span>}
             </div>
             <div className="mt-4 flex flex-wrap gap-2 text-sm">
               <span className="chip"><Tag className="h-3 w-3" /> {categoryName}</span>
@@ -71,7 +71,7 @@ export default function ListingPage() {
               <span className="chip"><Eye className="h-3 w-3" /> {listing.views} views</span>
             </div>
             {isOwner && (
-              <div className="mt-5 flex flex-wrap gap-2 border-t border-slate-100 pt-4">
+              <div className="mt-5 flex flex-wrap gap-2 border-t border-slate-100 dark:border-slate-800 pt-4">
                 <Link to={`/marketplace/${id}/edit`} className="btn btn-secondary btn-sm"><Pencil className="h-4 w-4" /> Edit</Link>
                 {listing.status === "active" ? (
                   <button className="btn btn-secondary btn-sm" onClick={() => setStatus("sold")}>Mark as sold</button>
@@ -84,12 +84,12 @@ export default function ListingPage() {
           </div>
 
           <div className="card p-5">
-            <h2 className="text-sm font-semibold text-slate-500">Seller</h2>
-            <Link to={`/u/${listing.seller.username}`} className="mt-3 flex items-center gap-3 hover:text-indigo-700">
+            <h2 className="text-sm font-semibold text-slate-500 dark:text-slate-400">Seller</h2>
+            <Link to={`/u/${listing.seller.username}`} className="mt-3 flex items-center gap-3 hover:text-indigo-700 dark:hover:text-indigo-300">
               <Avatar user={listing.seller} size="h-12 w-12" />
               <div>
                 <div className="font-semibold">{listing.seller.display_name}</div>
-                <div className="text-xs text-slate-500">@{listing.seller.username} · member since {formatDate(listing.seller.created_at)}</div>
+                <div className="text-xs text-slate-500 dark:text-slate-400">@{listing.seller.username} · member since {formatDate(listing.seller.created_at)}</div>
               </div>
             </Link>
             {listing.seller_contact ? (
@@ -108,10 +108,10 @@ export default function ListingPage() {
           </div>
 
           {listing.product && (
-            <Link to={`/product/${listing.product.id}`} className="card block p-5 hover:border-indigo-200">
-              <h2 className="text-sm font-semibold text-slate-500">Compare with a new one</h2>
+            <Link to={`/product/${listing.product.id}`} className="card block p-5 hover:border-indigo-200 dark:hover:border-indigo-500/30">
+              <h2 className="text-sm font-semibold text-slate-500 dark:text-slate-400">Compare with a new one</h2>
               <div className="mt-3 flex items-center gap-3">
-                <ProductImage src={listing.product.image_url} category={listing.product.category} className="h-14 w-14 rounded-lg border border-slate-100" />
+                <ProductImage src={listing.product.image_url} category={listing.product.category} className="h-14 w-14 rounded-lg border border-slate-100 dark:border-slate-800" />
                 <div className="min-w-0 flex-1">
                   <div className="line-clamp-1 text-sm font-medium">{listing.product.name}</div>
                   <div className="text-sm">
@@ -120,7 +120,7 @@ export default function ListingPage() {
                 </div>
               </div>
               {saving > 0 && (
-                <p className="mt-3 rounded-lg bg-emerald-50 px-3 py-2 text-sm font-medium text-emerald-800">
+                <p className="mt-3 rounded-lg bg-emerald-50 dark:bg-emerald-500/10 px-3 py-2 text-sm font-medium text-emerald-800 dark:text-emerald-200">
                   You save {formatPrice(saving)} ({Math.round((saving / listing.product.best_price) * 100)}%) vs. buying new
                 </p>
               )}

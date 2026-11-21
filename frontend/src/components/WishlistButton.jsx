@@ -59,17 +59,17 @@ export default function WishlistButton({ product, wishlist, onChange, compact = 
 
   return (
     <>
-      <button onClick={openDialog} className={`btn ${tracked ? "btn-secondary border-rose-200 text-rose-600" : "btn-secondary"} ${compact ? "btn-sm" : ""}`}>
+      <button onClick={openDialog} className={`btn ${tracked ? "btn-secondary border-rose-200 dark:border-rose-500/30 text-rose-600 dark:text-rose-400" : "btn-secondary"} ${compact ? "btn-sm" : ""}`}>
         <Heart className={`h-4 w-4 ${tracked ? "fill-rose-500 text-rose-500" : ""}`} />
         {tracked ? (wishlist.target_price ? `Alert at ${formatPrice(wishlist.target_price)}` : "Tracking") : "Track price"}
       </button>
       <Modal open={open} onClose={() => setOpen(false)} title={tracked ? "Edit price alert" : "Track this price"}>
         <form onSubmit={save} className="space-y-4">
-          <p className="text-sm text-slate-600">
+          <p className="text-sm text-slate-600 dark:text-slate-300">
             We check the stores every few hours. Set a target price and we'll notify you (in the app and by e-mail)
             the moment <span className="font-semibold">{product.name}</span> drops to it.
           </p>
-          <div className="rounded-xl bg-slate-50 px-4 py-3 text-sm">
+          <div className="rounded-xl bg-slate-50 dark:bg-slate-800/50 px-4 py-3 text-sm">
             Current best price: <span className="font-semibold">{formatPrice(product.best_price)}</span>
           </div>
           <label className="block">
@@ -84,7 +84,7 @@ export default function WishlistButton({ product, wishlist, onChange, compact = 
               placeholder="Leave empty to get any 5%+ price drop"
             />
           </label>
-          <label className="flex items-center gap-2 text-sm text-slate-700">
+          <label className="flex items-center gap-2 text-sm text-slate-700 dark:text-slate-200">
             <input type="checkbox" className="h-4 w-4 rounded accent-indigo-600" checked={stockAlert} onChange={(e) => setStockAlert(e.target.checked)} />
             Also tell me when it's back in stock
           </label>

@@ -5,6 +5,7 @@ import "./index.css";
 import Layout from "./components/Layout";
 import { PageLoader } from "./components/ui";
 import { AuthProvider, useAuth } from "./lib/auth";
+import { ThemeProvider } from "./lib/theme";
 import Browse from "./pages/Browse";
 import Home from "./pages/Home";
 import NotFound from "./pages/NotFound";
@@ -37,6 +38,7 @@ function RequireAuth({ children, admin = false }) {
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
+    <ThemeProvider>
     <AuthProvider>
       <BrowserRouter>
         <Routes>
@@ -63,5 +65,6 @@ createRoot(document.getElementById("root")).render(
         </Routes>
       </BrowserRouter>
     </AuthProvider>
+    </ThemeProvider>
   </StrictMode>,
 );

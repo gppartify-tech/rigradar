@@ -30,13 +30,13 @@ function Message({ message }) {
   const products = Object.fromEntries((message.products || []).map((p) => [String(p.id), p]));
   return (
     <div className={`flex gap-3 ${isUser ? "flex-row-reverse" : ""}`}>
-      <div className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full ${isUser ? "bg-slate-200 text-slate-600" : "bg-indigo-600 text-white"}`}>
+      <div className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full ${isUser ? "bg-slate-200 dark:bg-slate-700 text-slate-600 dark:text-slate-300" : "bg-indigo-600 text-white"}`}>
         {isUser ? <UserIcon className="h-4 w-4" /> : <Bot className="h-4 w-4" />}
       </div>
       <div className={`min-w-0 max-w-[85%] space-y-3 ${isUser ? "items-end" : ""}`}>
         <div
           dir={dir}
-          className={`rounded-2xl px-4 py-3 text-sm ${isUser ? "rounded-tr-sm bg-indigo-600 text-white" : "rounded-tl-sm border border-slate-200 bg-white text-slate-800 shadow-sm"}`}
+          className={`rounded-2xl px-4 py-3 text-sm ${isUser ? "rounded-tr-sm bg-indigo-600 text-white" : "rounded-tl-sm border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-100 shadow-sm"}`}
         >
           {isUser ? <p className="whitespace-pre-wrap">{message.content}</p> : <RichText text={message.content} products={products} />}
         </div>
@@ -92,12 +92,12 @@ export default function Assistant() {
 
   return (
     <div className="mx-auto flex h-[calc(100vh-4rem)] max-w-4xl flex-col px-4">
-      <div className="flex items-center justify-between border-b border-slate-200 py-4">
+      <div className="flex items-center justify-between border-b border-slate-200 dark:border-slate-800 py-4">
         <div className="flex items-center gap-3">
           <div className="rounded-xl bg-indigo-600 p-2 text-white"><Bot className="h-5 w-5" /></div>
           <div>
             <h1 className="font-bold">PC build assistant</h1>
-            <p className="text-xs text-slate-500">
+            <p className="text-xs text-slate-500 dark:text-slate-400">
               {meta?.chat_ai_enabled ? "Powered by Claude · " : "Offline mode (rule-based) · "}
               uses live prices from 3 Jordanian stores
             </p>
@@ -115,7 +115,7 @@ export default function Assistant() {
           <div className="py-8 text-center">
             <Sparkles className="mx-auto h-10 w-10 text-indigo-500" />
             <h2 className="mt-3 text-xl font-bold">What are you building?</h2>
-            <p className="mx-auto mt-1 max-w-md text-sm text-slate-500">
+            <p className="mx-auto mt-1 max-w-md text-sm text-slate-500 dark:text-slate-400">
               Tell me your budget, what you'll use the PC for and any parts you already have. I'll suggest compatible parts
               with today's best prices. English or Arabic both work.
             </p>
@@ -125,7 +125,7 @@ export default function Assistant() {
                   key={s}
                   onClick={() => send(s)}
                   dir={ARABIC.test(s) ? "rtl" : "ltr"}
-                  className="rounded-xl border border-slate-200 bg-white px-4 py-3 text-left text-sm text-slate-700 shadow-sm transition hover:border-indigo-300 hover:bg-indigo-50/40"
+                  className="rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 px-4 py-3 text-left text-sm text-slate-700 dark:text-slate-200 shadow-sm transition hover:border-indigo-300 dark:hover:border-indigo-500/40 hover:bg-indigo-50/40 dark:hover:bg-indigo-500/10"
                 >
                   {s}
                 </button>
@@ -137,25 +137,25 @@ export default function Assistant() {
         {busy && (
           <div className="flex gap-3">
             <div className="flex h-8 w-8 items-center justify-center rounded-full bg-indigo-600 text-white"><Bot className="h-4 w-4" /></div>
-            <div className="flex items-center gap-1 rounded-2xl rounded-tl-sm border border-slate-200 bg-white px-4 py-3" aria-label="Assistant is typing">
+            <div className="flex items-center gap-1 rounded-2xl rounded-tl-sm border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 px-4 py-3" aria-label="Assistant is typing">
               <span className="typing-dot h-2 w-2 rounded-full bg-slate-400" />
               <span className="typing-dot h-2 w-2 rounded-full bg-slate-400" />
               <span className="typing-dot h-2 w-2 rounded-full bg-slate-400" />
             </div>
           </div>
         )}
-        {error && <p className="text-center text-sm text-rose-600">{error}</p>}
+        {error && <p className="text-center text-sm text-rose-600 dark:text-rose-400">{error}</p>}
         <div ref={bottom} />
       </div>
 
       <form
-        className="border-t border-slate-200 py-4"
+        className="border-t border-slate-200 dark:border-slate-800 py-4"
         onSubmit={(e) => {
           e.preventDefault();
           send(input);
         }}
       >
-        <div className="flex items-end gap-2 rounded-2xl border border-slate-300 bg-white p-2 shadow-sm focus-within:border-indigo-500 focus-within:ring-2 focus-within:ring-indigo-500/20">
+        <div className="flex items-end gap-2 rounded-2xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 p-2 shadow-sm focus-within:border-indigo-500 focus-within:ring-2 focus-within:ring-indigo-500/20">
           <textarea
             value={input}
             onChange={(e) => setInput(e.target.value)}

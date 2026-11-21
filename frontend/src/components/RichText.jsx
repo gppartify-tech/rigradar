@@ -18,7 +18,7 @@ function inline(text, products, keyPrefix) {
         <Link
           key={key}
           to={`/product/${product.id}`}
-          className="mx-0.5 inline-flex items-center gap-1 rounded-md bg-indigo-50 px-1.5 py-0.5 align-baseline text-xs font-semibold text-indigo-700 hover:bg-indigo-100"
+          className="mx-0.5 inline-flex items-center gap-1 rounded-md bg-indigo-50 dark:bg-indigo-500/10 px-1.5 py-0.5 align-baseline text-xs font-semibold text-indigo-700 dark:text-indigo-300 hover:bg-indigo-100 dark:hover:bg-indigo-500/20"
         >
           {formatPrice(product.best_price)}
         </Link>

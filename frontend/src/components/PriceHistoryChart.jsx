@@ -1,11 +1,20 @@
 import { useMemo, useState } from "react";
 import { CartesianGrid, Line, LineChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts";
+import { useTheme } from "../lib/theme";
 import { useApi } from "../lib/useApi";
 import { formatPrice, storeDot } from "../lib/format";
 import { Spinner } from "./ui";
 
 // Chart chrome from the validated palette (light mode).
-const INK = { secondary: "#52514e", muted: "#898781", grid: "#e1e0d9", axis: "#c3c2b7", surface: "#ffffff" };
+const INK_LIGHT = { muted: "#898781", grid: "#e1e0d9", axis: "#c3c2b7", surface: "#ffffff" };
+const INK_DARK = { muted: "#94a3b8", grid: "#1e293b", axis: "#334155", surface: "#0f172a" };
+// Each store's identity colour has a lighter/darker step for the dark card (same hues, validated
+// with the palette validator: all pairs distinguishable, >= 3:1 contrast on #0f172a).
+const DARK_LINE = { "#2a78d6": "#3987e5", "#eb6834": "#d95926", "#1baf7a": "#199e70" };
+const lineColor = (store, isDark) => {
+  const base = storeDot(store);
+  return isDark ? DARK_LINE[base.toLowerCase()] || base : base;
+};
 const RANGES = [
   { days: 30, label: "30 days" },
   { days: 90, label: "90 days" },
@@ -36,20 +45,20 @@ function toRows(series) {
   });
 }
 
-function ChartTooltip({ active, payload, label, series }) {
+function ChartTooltip({ active, payload, label, series, isDark }) {
   if (!active || !payload?.length) return null;
   const row = payload[0].payload;
   return (
-    <div className="rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm shadow-lg">
-      <div className="mb-1 text-xs text-slate-500">{dateTimeLabel(label)}</div>
+    <div className="rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 px-3 py-2 text-sm shadow-lg">
+      <div className="mb-1 text-xs text-slate-500 dark:text-slate-400">{dateTimeLabel(label)}</div>
       {series.map((s) => {
         const price = row[`s${s.store.id}`];
         if (price === null || price === undefined) return null;
         return (
           <div key={s.store.id} className="flex items-center gap-2 py-0.5">
-            <span className="h-0.5 w-3 rounded" style={{ backgroundColor: storeDot(s.store) }} />
-            <span className="tabular font-semibold text-slate-900">{formatPrice(price)}</span>
-            <span className="text-xs text-slate-500">
+            <span className="h-0.5 w-3 rounded" style={{ backgroundColor: lineColor(s.store, isDark) }} />
+            <span className="tabular font-semibold text-slate-900 dark:text-slate-50">{formatPrice(price)}</span>
+            <span className="text-xs text-slate-500 dark:text-slate-400">
               {s.store.name}
               {row[`stock${s.store.id}`] === false ? " · out of stock" : ""}
             </span>
@@ -61,6 +70,8 @@ function ChartTooltip({ active, payload, label, series }) {
 }
 
 export default function PriceHistoryChart({ productId }) {
+  const { isDark } = useTheme();
+  const INK = isDark ? INK_DARK : INK_LIGHT;
   const [days, setDays] = useState(90);
   const [view, setView] = useState("chart");
   const { data, loading, error } = useApi(`/products/${productId}/history`, { days });
@@ -83,28 +94,28 @@ export default function PriceHistoryChart({ productId }) {
       <div className="flex flex-wrap items-center justify-between gap-3">
         <div>
           <h2 className="text-lg font-semibold">Price history</h2>
-          <p className="text-sm text-slate-500">Prices recorded at every store check, in JOD.</p>
+          <p className="text-sm text-slate-500 dark:text-slate-400">Prices recorded at every store check, in JOD.</p>
         </div>
         <div className="flex flex-wrap items-center gap-2">
-          <div className="flex rounded-xl bg-slate-100 p-1" role="group" aria-label="Time range">
+          <div className="flex rounded-xl bg-slate-100 dark:bg-slate-800 p-1" role="group" aria-label="Time range">
             {RANGES.map((r) => (
               <button
                 key={r.days}
                 onClick={() => setDays(r.days)}
                 aria-pressed={days === r.days}
-                className={`rounded-lg px-2.5 py-1 text-xs font-semibold ${days === r.days ? "bg-white text-slate-900 shadow-sm" : "text-slate-500 hover:text-slate-800"}`}
+                className={`rounded-lg px-2.5 py-1 text-xs font-semibold ${days === r.days ? "bg-white dark:bg-slate-900 text-slate-900 dark:text-slate-50 shadow-sm" : "text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-100"}`}
               >
                 {r.label}
               </button>
             ))}
           </div>
-          <div className="flex rounded-xl bg-slate-100 p-1" role="group" aria-label="View">
+          <div className="flex rounded-xl bg-slate-100 dark:bg-slate-800 p-1" role="group" aria-label="View">
             {["chart", "table"].map((v) => (
               <button
                 key={v}
                 onClick={() => setView(v)}
                 aria-pressed={view === v}
-                className={`rounded-lg px-2.5 py-1 text-xs font-semibold capitalize ${view === v ? "bg-white text-slate-900 shadow-sm" : "text-slate-500 hover:text-slate-800"}`}
+                className={`rounded-lg px-2.5 py-1 text-xs font-semibold capitalize ${view === v ? "bg-white dark:bg-slate-900 text-slate-900 dark:text-slate-50 shadow-sm" : "text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-100"}`}
               >
                 {v}
               </button>
@@ -118,9 +129,9 @@ export default function PriceHistoryChart({ productId }) {
         <ul className="mt-4 flex flex-wrap gap-x-5 gap-y-1">
           {series.map((s) => (
             <li key={s.store.id} className="flex items-center gap-2 text-sm">
-              <span className="h-0.5 w-4 rounded" style={{ backgroundColor: storeDot(s.store) }} />
-              <span className="text-slate-600">{s.store.name}</span>
-              <span className="tabular font-semibold text-slate-900">{formatPrice(current(s))}</span>
+              <span className="h-0.5 w-4 rounded" style={{ backgroundColor: lineColor(s.store, isDark) }} />
+              <span className="text-slate-600 dark:text-slate-300">{s.store.name}</span>
+              <span className="tabular font-semibold text-slate-900 dark:text-slate-50">{formatPrice(current(s))}</span>
               {s.points[s.points.length - 1]?.in_stock === false && <span className="text-xs text-slate-400">out of stock</span>}
             </li>
           ))}
@@ -133,9 +144,9 @@ export default function PriceHistoryChart({ productId }) {
             <Spinner />
           </div>
         )}
-        {error && <p className="py-10 text-center text-sm text-slate-500">Could not load the price history.</p>}
+        {error && <p className="py-10 text-center text-sm text-slate-500 dark:text-slate-400">Could not load the price history.</p>}
         {data && series.length === 0 && (
-          <p className="py-10 text-center text-sm text-slate-500">No price data in this period yet.</p>
+          <p className="py-10 text-center text-sm text-slate-500 dark:text-slate-400">No price data in this period yet.</p>
         )}
         {data && series.length > 0 && view === "chart" && (
           <div className="h-72">
@@ -162,7 +173,7 @@ export default function PriceHistoryChart({ productId }) {
                   domain={["auto", "auto"]}
                 />
                 <Tooltip
-                  content={<ChartTooltip series={series} />}
+                  content={<ChartTooltip series={series} isDark={isDark} />}
                   cursor={{ stroke: INK.axis, strokeWidth: 1 }}
                   isAnimationActive={false}
                 />
@@ -172,7 +183,7 @@ export default function PriceHistoryChart({ productId }) {
                     dataKey={`s${s.store.id}`}
                     name={s.store.name}
                     type="stepAfter"
-                    stroke={storeDot(s.store)}
+                    stroke={lineColor(s.store, isDark)}
                     strokeWidth={2}
                     strokeLinejoin="round"
                     strokeLinecap="round"
@@ -187,9 +198,9 @@ export default function PriceHistoryChart({ productId }) {
           </div>
         )}
         {data && series.length > 0 && view === "table" && (
-          <div className="max-h-72 overflow-y-auto rounded-xl border border-slate-200">
+          <div className="max-h-72 overflow-y-auto rounded-xl border border-slate-200 dark:border-slate-800">
             <table className="w-full text-sm">
-              <thead className="sticky top-0 bg-slate-50 text-left text-xs uppercase tracking-wide text-slate-500">
+              <thead className="sticky top-0 bg-slate-50 dark:bg-slate-800/50 text-left text-xs uppercase tracking-wide text-slate-500 dark:text-slate-400">
                 <tr>
                   <th className="px-3 py-2">Date</th>
                   <th className="px-3 py-2">Store</th>
@@ -197,13 +208,13 @@ export default function PriceHistoryChart({ productId }) {
                   <th className="px-3 py-2">Stock</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-slate-100">
+              <tbody className="divide-y divide-slate-100 dark:divide-slate-800">
                 {allPoints.map((p, i) => (
                   <tr key={i}>
-                    <td className="px-3 py-2 text-slate-600">{dateTimeLabel(p.t)}</td>
+                    <td className="px-3 py-2 text-slate-600 dark:text-slate-300">{dateTimeLabel(p.t)}</td>
                     <td className="px-3 py-2">{p.store.name}</td>
                     <td className="tabular px-3 py-2 text-right font-semibold">{p.price === null ? "delisted" : formatPrice(p.price)}</td>
-                    <td className="px-3 py-2 text-slate-600">{p.in_stock ? "In stock" : "Out of stock"}</td>
+                    <td className="px-3 py-2 text-slate-600 dark:text-slate-300">{p.in_stock ? "In stock" : "Out of stock"}</td>
                   </tr>
                 ))}
               </tbody>

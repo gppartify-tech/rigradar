@@ -20,11 +20,11 @@ function CheckList({ title, values, selected, onToggle, format = (v) => v, limit
   if (!values?.length) return null;
   const shown = all ? values : values.slice(0, limit);
   return (
-    <fieldset className="border-t border-slate-100 py-4">
-      <legend className="mb-2 text-sm font-semibold text-slate-900">{title}</legend>
+    <fieldset className="border-t border-slate-100 dark:border-slate-800 py-4">
+      <legend className="mb-2 text-sm font-semibold text-slate-900 dark:text-slate-50">{title}</legend>
       <div className="space-y-1.5">
         {shown.map(({ value, count }) => (
-          <label key={value} className="flex cursor-pointer items-center gap-2 text-sm text-slate-700">
+          <label key={value} className="flex cursor-pointer items-center gap-2 text-sm text-slate-700 dark:text-slate-200">
             <input
               type="checkbox"
               className="h-4 w-4 rounded accent-indigo-600"
@@ -37,7 +37,7 @@ function CheckList({ title, values, selected, onToggle, format = (v) => v, limit
         ))}
       </div>
       {values.length > limit && (
-        <button className="mt-2 text-xs font-semibold text-indigo-600" onClick={() => setAll((a) => !a)}>
+        <button className="mt-2 text-xs font-semibold text-indigo-600 dark:text-indigo-400" onClick={() => setAll((a) => !a)}>
           {all ? "Show less" : `Show all ${values.length}`}
         </button>
       )}
@@ -92,8 +92,8 @@ export default function Browse() {
         In stock only
         <input type="checkbox" className="h-4 w-4 accent-indigo-600" checked={inStock} onChange={(e) => update({ in_stock: e.target.checked ? "true" : "" })} />
       </label>
-      <fieldset className="border-t border-slate-100 py-4">
-        <legend className="mb-2 text-sm font-semibold text-slate-900">Price (JOD)</legend>
+      <fieldset className="border-t border-slate-100 dark:border-slate-800 py-4">
+        <legend className="mb-2 text-sm font-semibold text-slate-900 dark:text-slate-50">Price (JOD)</legend>
         <form
           className="flex items-center gap-2"
           onSubmit={(e) => {
@@ -134,7 +134,7 @@ export default function Browse() {
       <div className="flex flex-wrap items-end justify-between gap-4">
         <div>
           <h1 className="text-2xl font-bold tracking-tight sm:text-3xl">{title}</h1>
-          <p className="mt-1 text-sm text-slate-500">
+          <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
             {data ? `${data.total.toLocaleString()} products` : " "}
             {meta && " · lowest price across iGeek, CompuJordan and Oriental Store"}
           </p>

@@ -11,7 +11,7 @@ function AuthCard({ title, subtitle, children }) {
         <div className="mb-6 text-center">
           <span className="inline-flex rounded-2xl bg-indigo-600 p-3 text-white"><Radar className="h-6 w-6" /></span>
           <h1 className="mt-4 text-2xl font-bold tracking-tight">{title}</h1>
-          <p className="mt-1 text-sm text-slate-500">{subtitle}</p>
+          <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">{subtitle}</p>
         </div>
         <div className="card p-6">{children}</div>
       </div>
@@ -53,7 +53,7 @@ export function Login() {
         <ErrorBox error={error} />
         <button className="btn btn-primary w-full" disabled={busy}>{busy ? "Logging in…" : "Log in"}</button>
       </form>
-      <p className="mt-4 text-center text-sm text-slate-500">
+      <p className="mt-4 text-center text-sm text-slate-500 dark:text-slate-400">
         New here? <Link to={`/register?next=${encodeURIComponent(next)}`} className="link">Create an account</Link>
       </p>
     </AuthCard>
@@ -93,7 +93,7 @@ export function Register() {
         <ErrorBox error={error} />
         <button className="btn btn-primary w-full" disabled={busy}>{busy ? "Creating account…" : "Create account"}</button>
       </form>
-      <p className="mt-4 text-center text-sm text-slate-500">
+      <p className="mt-4 text-center text-sm text-slate-500 dark:text-slate-400">
         Already have an account? <Link to={`/login?next=${encodeURIComponent(next)}`} className="link">Log in</Link>
       </p>
     </AuthCard>

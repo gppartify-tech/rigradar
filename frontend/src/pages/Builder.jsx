@@ -42,16 +42,16 @@ function PartPicker({ category, chosen, onPick, onClose }) {
         <input autoFocus className="input pl-9" placeholder="Filter by name…" value={q} onChange={(e) => { setQ(e.target.value); setPage(1); }} />
       </div>
       {compat && (
-        <label className="mt-3 flex items-center gap-2 text-sm text-slate-600">
+        <label className="mt-3 flex items-center gap-2 text-sm text-slate-600 dark:text-slate-300">
           <input type="checkbox" className="h-4 w-4 accent-indigo-600" checked={onlyCompatible} onChange={(e) => setOnlyCompatible(e.target.checked)} />
           Only show parts compatible with your build ({label})
         </label>
       )}
       <div className={`mt-4 space-y-2 ${loading ? "opacity-60" : ""}`}>
         {!data && <div className="flex justify-center py-10"><Spinner /></div>}
-        {data?.items.length === 0 && <p className="py-8 text-center text-sm text-slate-500">No in-stock parts match.</p>}
+        {data?.items.length === 0 && <p className="py-8 text-center text-sm text-slate-500 dark:text-slate-400">No in-stock parts match.</p>}
         {data?.items.map((p) => (
-          <button key={p.id} onClick={() => onPick(p)} className="flex w-full items-center gap-3 rounded-xl border border-slate-200 p-2.5 text-left transition hover:border-indigo-300 hover:bg-indigo-50/40">
+          <button key={p.id} onClick={() => onPick(p)} className="flex w-full items-center gap-3 rounded-xl border border-slate-200 dark:border-slate-800 p-2.5 text-left transition hover:border-indigo-300 dark:hover:border-indigo-500/40 hover:bg-indigo-50/40 dark:hover:bg-indigo-500/10">
             <ProductImage src={p.image_url} category={p.category} className="h-12 w-12 rounded-lg" />
             <div className="min-w-0 flex-1">
               <div className="line-clamp-1 text-sm font-medium">{p.name}</div>
@@ -69,7 +69,7 @@ function PartPicker({ category, chosen, onPick, onClose }) {
       {data && data.pages > 1 && (
         <div className="mt-4 flex justify-between">
           <button className="btn btn-ghost btn-sm" disabled={page <= 1} onClick={() => setPage(page - 1)}>Previous</button>
-          <span className="text-sm text-slate-500">Page {page} of {data.pages}</span>
+          <span className="text-sm text-slate-500 dark:text-slate-400">Page {page} of {data.pages}</span>
           <button className="btn btn-ghost btn-sm" disabled={page >= data.pages} onClick={() => setPage(page + 1)}>Next</button>
         </div>
       )}
@@ -105,8 +105,8 @@ function AutoBuild({ onBuilt }) {
   const set = (key) => (e) => setForm((f) => ({ ...f, [key]: e.target.value }));
   return (
     <form className="card p-5" onSubmit={(e) => { e.preventDefault(); run(); }}>
-      <h2 className="flex items-center gap-2 font-semibold"><Sparkles className="h-5 w-5 text-indigo-600" /> Auto-build for a budget</h2>
-      <p className="mt-1 text-sm text-slate-500">Picks compatible, in-stock parts with the best performance for the money.</p>
+      <h2 className="flex items-center gap-2 font-semibold"><Sparkles className="h-5 w-5 text-indigo-600 dark:text-indigo-400" /> Auto-build for a budget</h2>
+      <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">Picks compatible, in-stock parts with the best performance for the money.</p>
       <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
         <label><span className="label">Budget (JOD)</span><input type="number" min="150" max="20000" className="input" value={form.budget} onChange={set("budget")} required /></label>
         <label><span className="label">Main use</span>
@@ -189,7 +189,7 @@ export default function Builder() {
       <div className="flex flex-wrap items-end justify-between gap-4">
         <div>
           <h1 className="text-2xl font-bold tracking-tight sm:text-3xl">PC Builder</h1>
-          <p className="mt-1 text-sm text-slate-500">Pick parts yourself or auto-build for a budget. We check compatibility as you go.</p>
+          <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">Pick parts yourself or auto-build for a budget. We check compatibility as you go.</p>
         </div>
         {ids.length > 0 && (
           <div className="flex flex-wrap gap-2">
@@ -199,26 +199,26 @@ export default function Builder() {
           </div>
         )}
       </div>
-      {message && <div className="mt-4 rounded-xl border border-indigo-200 bg-indigo-50 px-4 py-3 text-sm text-indigo-900">{message}</div>}
+      {message && <div className="mt-4 rounded-xl border border-indigo-200 dark:border-indigo-500/30 bg-indigo-50 dark:bg-indigo-500/10 px-4 py-3 text-sm text-indigo-900 dark:text-indigo-100">{message}</div>}
 
       <div className="mt-6"><AutoBuild onBuilt={onBuilt} /></div>
 
       <div className="mt-6 grid gap-6 lg:grid-cols-[1fr_320px]">
-        <div className="card divide-y divide-slate-100">
+        <div className="card divide-y divide-slate-100 dark:divide-slate-800">
           {CATEGORIES.map((cat) => {
             const part = partFor(cat.slug);
             const Icon = cat.icon;
             return (
               <div key={cat.slug} className="flex flex-col gap-3 p-4 sm:flex-row sm:items-center">
-                <div className="flex w-40 shrink-0 items-center gap-2 text-sm font-semibold text-slate-700">
+                <div className="flex w-40 shrink-0 items-center gap-2 text-sm font-semibold text-slate-700 dark:text-slate-200">
                   <Icon className="h-5 w-5 text-slate-400" /> {cat.singular}
                 </div>
                 {part ? (
                   <>
                     <div className="flex min-w-0 flex-1 items-center gap-3">
-                      <ProductImage src={part.product.image_url} category={cat.slug} className="h-12 w-12 shrink-0 rounded-lg border border-slate-100" />
+                      <ProductImage src={part.product.image_url} category={cat.slug} className="h-12 w-12 shrink-0 rounded-lg border border-slate-100 dark:border-slate-800" />
                       <div className="min-w-0">
-                        <Link to={`/product/${part.product.id}`} className="line-clamp-1 text-sm font-medium hover:text-indigo-700">{part.product.name}</Link>
+                        <Link to={`/product/${part.product.id}`} className="line-clamp-1 text-sm font-medium hover:text-indigo-700 dark:hover:text-indigo-300">{part.product.name}</Link>
                         <div className="mt-0.5 flex flex-wrap items-center gap-2">
                           <StoreBadge store={part.product.best_store} className="text-xs" />
                           {!part.product.in_stock && <StockBadge inStock={false} />}
@@ -245,15 +245,15 @@ export default function Builder() {
 
         <aside className="space-y-4 lg:sticky lg:top-24 lg:self-start">
           <div className="card p-5">
-            <div className="text-sm text-slate-500">Total</div>
+            <div className="text-sm text-slate-500 dark:text-slate-400">Total</div>
             <div className="text-3xl font-extrabold">{formatPrice(report?.total_price ?? 0)}</div>
             {report && (
               <>
-                <div className={`mt-3 flex items-center gap-2 text-sm font-semibold ${report.compatible ? "text-emerald-700" : "text-rose-700"}`}>
+                <div className={`mt-3 flex items-center gap-2 text-sm font-semibold ${report.compatible ? "text-emerald-700 dark:text-emerald-300" : "text-rose-700 dark:text-rose-300"}`}>
                   {report.compatible ? <CheckCircle2 className="h-5 w-5" /> : <CircleAlert className="h-5 w-5" />}
                   {report.compatible ? "No compatibility problems" : "Compatibility problems found"}
                 </div>
-                <div className="mt-2 flex items-center gap-2 text-sm text-slate-600">
+                <div className="mt-2 flex items-center gap-2 text-sm text-slate-600 dark:text-slate-300">
                   <Zap className="h-4 w-4 text-amber-500" /> Estimated power ~{report.estimated_wattage} W (PSU {report.recommended_psu_w} W+)
                 </div>
               </>
@@ -261,8 +261,8 @@ export default function Builder() {
           </div>
           {report?.issues?.length > 0 && <IssueList issues={report.issues} />}
           {notes.length > 0 && (
-            <div className="card p-4 text-sm text-slate-600">
-              <h3 className="mb-2 font-semibold text-slate-900">How this build was chosen</h3>
+            <div className="card p-4 text-sm text-slate-600 dark:text-slate-300">
+              <h3 className="mb-2 font-semibold text-slate-900 dark:text-slate-50">How this build was chosen</h3>
               <ul className="list-disc space-y-1 ps-5">{notes.map((n, i) => <li key={i}>{n}</li>)}</ul>
             </div>
           )}

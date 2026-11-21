@@ -31,12 +31,12 @@ export default function Profile() {
         <Avatar user={profile} size="h-20 w-20" className="text-2xl" />
         <div className="flex-1">
           <h1 className="text-2xl font-bold">{profile.display_name}</h1>
-          <div className="mt-1 flex flex-wrap items-center gap-3 text-sm text-slate-500">
+          <div className="mt-1 flex flex-wrap items-center gap-3 text-sm text-slate-500 dark:text-slate-400">
             <span>@{profile.username}</span>
             {profile.city && <span className="flex items-center gap-1"><MapPin className="h-4 w-4" /> {profile.city}</span>}
             <span className="flex items-center gap-1"><CalendarDays className="h-4 w-4" /> Member since {formatDate(profile.created_at)}</span>
           </div>
-          {profile.bio && <p className="mt-3 max-w-2xl text-sm text-slate-700" dir="auto">{profile.bio}</p>}
+          {profile.bio && <p className="mt-3 max-w-2xl text-sm text-slate-700 dark:text-slate-200" dir="auto">{profile.bio}</p>}
         </div>
         {isMe && (
           <div className="flex gap-2">
@@ -46,12 +46,12 @@ export default function Profile() {
         )}
       </div>
 
-      <div className="mt-6 flex gap-1 border-b border-slate-200">
+      <div className="mt-6 flex gap-1 border-b border-slate-200 dark:border-slate-800">
         {tabs.map((t) => (
           <button
             key={t.key}
             onClick={() => setTab(t.key)}
-            className={`-mb-px border-b-2 px-4 py-2 text-sm font-semibold ${tab === t.key ? "border-indigo-600 text-indigo-700" : "border-transparent text-slate-500 hover:text-slate-800"}`}
+            className={`-mb-px border-b-2 px-4 py-2 text-sm font-semibold ${tab === t.key ? "border-indigo-600 text-indigo-700 dark:text-indigo-300" : "border-transparent text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-100"}`}
           >
             {t.label}
           </button>

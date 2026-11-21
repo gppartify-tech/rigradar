@@ -40,7 +40,7 @@ export default function Wishlist() {
   return (
     <div className="container-page py-8">
       <h1 className="text-2xl font-bold tracking-tight sm:text-3xl">Wishlist & price alerts</h1>
-      <p className="mt-1 text-sm text-slate-500">
+      <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
         We check every store every few hours. When a part reaches your target price you get a notification here and by e-mail.
       </p>
       <ErrorBox error={error} className="mt-4" />
@@ -58,10 +58,10 @@ export default function Wishlist() {
           return (
             <div key={item.id} className="card flex flex-col gap-4 p-4 md:flex-row md:items-center">
               <Link to={`/product/${p.id}`} className="flex min-w-0 flex-1 items-center gap-4">
-                <ProductImage src={p.image_url} category={p.category} className="h-16 w-16 shrink-0 rounded-xl border border-slate-100" />
+                <ProductImage src={p.image_url} category={p.category} className="h-16 w-16 shrink-0 rounded-xl border border-slate-100 dark:border-slate-800" />
                 <div className="min-w-0">
-                  <div className="line-clamp-2 font-semibold hover:text-indigo-700">{p.name}</div>
-                  <div className="mt-1 flex flex-wrap items-center gap-2 text-xs text-slate-500">
+                  <div className="line-clamp-2 font-semibold hover:text-indigo-700 dark:hover:text-indigo-300">{p.name}</div>
+                  <div className="mt-1 flex flex-wrap items-center gap-2 text-xs text-slate-500 dark:text-slate-400">
                     <StockBadge inStock={p.in_stock} />
                     <span>added {timeAgo(item.created_at)}</span>
                   </div>
@@ -69,28 +69,28 @@ export default function Wishlist() {
               </Link>
               <div className="flex flex-wrap items-center gap-x-6 gap-y-3">
                 <div>
-                  <div className="text-xs text-slate-500">Best price now</div>
+                  <div className="text-xs text-slate-500 dark:text-slate-400">Best price now</div>
                   <div className="tabular text-lg font-bold">{formatPrice(p.best_price)}</div>
                   <StoreBadge store={p.best_store} className="text-xs" />
                 </div>
                 {change !== null && Math.abs(change) >= 0.5 && (
-                  <div className={`flex items-center gap-1 text-sm font-semibold ${change < 0 ? "text-emerald-700" : "text-rose-600"}`}>
+                  <div className={`flex items-center gap-1 text-sm font-semibold ${change < 0 ? "text-emerald-700 dark:text-emerald-300" : "text-rose-600 dark:text-rose-400"}`}>
                     {change < 0 ? <TrendingDown className="h-4 w-4" /> : <TrendingUp className="h-4 w-4" />}
                     {change > 0 ? "+" : ""}{change.toFixed(1)}% since added
                   </div>
                 )}
                 <div>
-                  <div className="mb-1 flex items-center gap-1 text-xs text-slate-500"><Target className="h-3.5 w-3.5" /> Alert me at</div>
+                  <div className="mb-1 flex items-center gap-1 text-xs text-slate-500 dark:text-slate-400"><Target className="h-3.5 w-3.5" /> Alert me at</div>
                   <TargetEditor item={item} onSaved={replace} />
                 </div>
                 {item.target_reached ? (
-                  <span className="inline-flex items-center gap-1 rounded-full bg-emerald-50 px-2.5 py-1 text-xs font-semibold text-emerald-700">
+                  <span className="inline-flex items-center gap-1 rounded-full bg-emerald-50 dark:bg-emerald-500/10 px-2.5 py-1 text-xs font-semibold text-emerald-700 dark:text-emerald-300">
                     <BellRing className="h-3.5 w-3.5" /> Target reached
                   </span>
                 ) : (
                   <span className="chip">{item.target_price ? "Watching" : "Any 5% drop"}</span>
                 )}
-                <button className="btn btn-ghost btn-sm text-rose-600" onClick={() => remove(item.id)} aria-label="Remove from wishlist">
+                <button className="btn btn-ghost btn-sm text-rose-600 dark:text-rose-400" onClick={() => remove(item.id)} aria-label="Remove from wishlist">
                   <Trash2 className="h-4 w-4" />
                 </button>
               </div>

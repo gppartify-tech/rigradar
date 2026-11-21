@@ -14,12 +14,12 @@ export function ListingCard({ listing }) {
         )}
       </div>
       <div className="p-4">
-        <h3 className="line-clamp-1 font-semibold group-hover:text-indigo-700">{listing.title}</h3>
+        <h3 className="line-clamp-1 font-semibold group-hover:text-indigo-700 dark:group-hover:text-indigo-300">{listing.title}</h3>
         <div className="mt-1 flex items-center gap-2">
           <span className="tabular text-lg font-bold">{formatPrice(listing.price)}</span>
-          {listing.negotiable && <span className="text-xs text-slate-500">negotiable</span>}
+          {listing.negotiable && <span className="text-xs text-slate-500 dark:text-slate-400">negotiable</span>}
         </div>
-        <div className="mt-2 flex flex-wrap items-center gap-2 text-xs text-slate-500">
+        <div className="mt-2 flex flex-wrap items-center gap-2 text-xs text-slate-500 dark:text-slate-400">
           <span className="chip">{CONDITIONS[listing.condition]}</span>
           {listing.city && <span className="flex items-center gap-0.5"><MapPin className="h-3 w-3" /> {listing.city}</span>}
           <span>· {timeAgo(listing.created_at)}</span>
@@ -48,7 +48,7 @@ export default function Marketplace() {
       <div className="flex flex-wrap items-end justify-between gap-4">
         <div>
           <h1 className="text-2xl font-bold tracking-tight sm:text-3xl">Marketplace</h1>
-          <p className="mt-1 text-sm text-slate-500">Used and new parts sold by RigRadar members across Jordan.</p>
+          <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">Used and new parts sold by RigRadar members across Jordan.</p>
         </div>
         <Link to="/marketplace/new" className="btn btn-primary"><Plus className="h-4 w-4" /> Sell an item</Link>
       </div>

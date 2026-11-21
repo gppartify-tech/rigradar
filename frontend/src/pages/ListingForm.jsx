@@ -15,11 +15,11 @@ function ProductLink({ category, product, onChange }) {
   if (!isPart) return null;
   if (product) {
     return (
-      <div className="flex items-center gap-3 rounded-xl border border-slate-200 p-3">
+      <div className="flex items-center gap-3 rounded-xl border border-slate-200 dark:border-slate-800 p-3">
         <ProductImage src={product.image_url} category={product.category} className="h-10 w-10 rounded-lg" />
         <div className="min-w-0 flex-1 text-sm">
           <div className="line-clamp-1 font-medium">{product.name}</div>
-          <div className="text-xs text-slate-500">New from {formatPrice(product.best_price)}</div>
+          <div className="text-xs text-slate-500 dark:text-slate-400">New from {formatPrice(product.best_price)}</div>
         </div>
         <button type="button" className="btn btn-ghost btn-sm" onClick={() => onChange(null)} aria-label="Unlink product"><X className="h-4 w-4" /></button>
       </div>
@@ -32,13 +32,13 @@ function ProductLink({ category, product, onChange }) {
         <input className="input pl-9" placeholder="Type the model, e.g. RTX 3060" value={q} onChange={(e) => setQ(e.target.value)} />
       </div>
       {data?.items?.length > 0 && (
-        <ul className="mt-2 divide-y divide-slate-100 rounded-xl border border-slate-200">
+        <ul className="mt-2 divide-y divide-slate-100 dark:divide-slate-800 rounded-xl border border-slate-200 dark:border-slate-800">
           {data.items.map((p) => (
             <li key={p.id}>
-              <button type="button" onClick={() => { onChange(p); setQ(""); }} className="flex w-full items-center gap-3 px-3 py-2 text-left text-sm hover:bg-slate-50">
+              <button type="button" onClick={() => { onChange(p); setQ(""); }} className="flex w-full items-center gap-3 px-3 py-2 text-left text-sm hover:bg-slate-50 dark:hover:bg-slate-800">
                 <ProductImage src={p.image_url} category={p.category} className="h-8 w-8 rounded" />
                 <span className="line-clamp-1 flex-1">{p.name}</span>
-                <span className="text-xs text-slate-500">{formatPrice(p.best_price)}</span>
+                <span className="text-xs text-slate-500 dark:text-slate-400">{formatPrice(p.best_price)}</span>
               </button>
             </li>
           ))}
@@ -110,7 +110,7 @@ export default function ListingForm() {
   return (
     <div className="container-page max-w-3xl py-8">
       <h1 className="text-2xl font-bold tracking-tight sm:text-3xl">{editing ? "Edit listing" : "Sell an item"}</h1>
-      <p className="mt-1 text-sm text-slate-500">Good photos and an honest description sell faster.</p>
+      <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">Good photos and an honest description sell faster.</p>
       <form onSubmit={submit} className="card mt-6 space-y-5 p-6">
         <Field label="Title">
           <input className="input" required minLength={5} maxLength={150} value={form.title} onChange={set("title")} placeholder="e.g. MSI RTX 3060 Ventus 12GB - 1 year old" />
@@ -145,7 +145,7 @@ export default function ListingForm() {
         <div>
           <span className="label flex items-center gap-1"><Link2 className="h-4 w-4" /> Link to the catalog (optional)</span>
           <ProductLink category={form.category} product={product} onChange={setProduct} />
-          <p className="mt-1 text-xs text-slate-500">Buyers will see how much they save compared to the new price.</p>
+          <p className="mt-1 text-xs text-slate-500 dark:text-slate-400">Buyers will see how much they save compared to the new price.</p>
         </div>
         <div>
           <span className="label">Photos ({images.length + files.length}/{maxImages})</span>
@@ -153,17 +153,17 @@ export default function ListingForm() {
             {images.map((img) => (
               <div key={img.id} className="relative">
                 <img src={img.url} alt="" className="aspect-square w-full rounded-xl object-cover" />
-                <button type="button" onClick={() => removeExisting(img.id)} className="absolute -right-2 -top-2 rounded-full bg-white p-1 shadow" aria-label="Remove photo"><X className="h-3.5 w-3.5" /></button>
+                <button type="button" onClick={() => removeExisting(img.id)} className="absolute -right-2 -top-2 rounded-full bg-white dark:bg-slate-900 p-1 shadow" aria-label="Remove photo"><X className="h-3.5 w-3.5" /></button>
               </div>
             ))}
             {files.map((f, i) => (
               <div key={f.url} className="relative">
                 <img src={f.url} alt="" className="aspect-square w-full rounded-xl object-cover" />
-                <button type="button" onClick={() => setFiles((cur) => cur.filter((_, j) => j !== i))} className="absolute -right-2 -top-2 rounded-full bg-white p-1 shadow" aria-label="Remove photo"><X className="h-3.5 w-3.5" /></button>
+                <button type="button" onClick={() => setFiles((cur) => cur.filter((_, j) => j !== i))} className="absolute -right-2 -top-2 rounded-full bg-white dark:bg-slate-900 p-1 shadow" aria-label="Remove photo"><X className="h-3.5 w-3.5" /></button>
               </div>
             ))}
             {images.length + files.length < maxImages && (
-              <label className="flex aspect-square cursor-pointer flex-col items-center justify-center rounded-xl border-2 border-dashed border-slate-300 text-slate-400 hover:border-indigo-400 hover:text-indigo-600">
+              <label className="flex aspect-square cursor-pointer flex-col items-center justify-center rounded-xl border-2 border-dashed border-slate-300 dark:border-slate-700 text-slate-400 hover:border-indigo-400 hover:text-indigo-600 dark:hover:text-indigo-400">
                 <ImagePlus className="h-6 w-6" />
                 <span className="mt-1 text-xs">Add</span>
                 <input type="file" accept="image/*" multiple className="sr-only" onChange={(e) => addFiles(e.target.files)} />

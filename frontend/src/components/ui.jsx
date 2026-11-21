@@ -5,7 +5,7 @@ import {
 import { CATEGORY, storeDot } from "../lib/format";
 
 export function Spinner({ className = "" }) {
-  return <Loader2 className={`h-5 w-5 animate-spin text-indigo-600 ${className}`} aria-label="Loading" />;
+  return <Loader2 className={`h-5 w-5 animate-spin text-indigo-600 dark:text-indigo-400 ${className}`} aria-label="Loading" />;
 }
 
 export function PageLoader() {
@@ -19,7 +19,7 @@ export function PageLoader() {
 export function ErrorBox({ error, className = "" }) {
   if (!error) return null;
   return (
-    <div className={`flex items-start gap-2 rounded-xl border border-rose-200 bg-rose-50 px-4 py-3 text-sm text-rose-800 ${className}`}>
+    <div className={`flex items-start gap-2 rounded-xl border border-rose-200 dark:border-rose-500/30 bg-rose-50 dark:bg-rose-500/10 px-4 py-3 text-sm text-rose-800 dark:text-rose-200 ${className}`}>
       <CircleAlert className="mt-0.5 h-4 w-4 shrink-0" />
       <span>{error.message || String(error)}</span>
     </div>
@@ -29,11 +29,11 @@ export function ErrorBox({ error, className = "" }) {
 export function EmptyState({ icon: Icon = Info, title, children, action }) {
   return (
     <div className="card flex flex-col items-center px-6 py-14 text-center">
-      <div className="mb-4 rounded-2xl bg-indigo-50 p-3 text-indigo-600">
+      <div className="mb-4 rounded-2xl bg-indigo-50 dark:bg-indigo-500/10 p-3 text-indigo-600 dark:text-indigo-400">
         <Icon className="h-7 w-7" />
       </div>
-      <h3 className="text-lg font-semibold text-slate-900">{title}</h3>
-      {children && <p className="mt-1 max-w-md text-sm text-slate-500">{children}</p>}
+      <h3 className="text-lg font-semibold text-slate-900 dark:text-slate-50">{title}</h3>
+      {children && <p className="mt-1 max-w-md text-sm text-slate-500 dark:text-slate-400">{children}</p>}
       {action && <div className="mt-5">{action}</div>}
     </div>
   );
@@ -43,7 +43,7 @@ export function EmptyState({ icon: Icon = Info, title, children, action }) {
 export function StoreBadge({ store, className = "" }) {
   if (!store) return null;
   return (
-    <span className={`inline-flex items-center gap-1.5 text-sm text-slate-700 ${className}`}>
+    <span className={`inline-flex items-center gap-1.5 text-sm text-slate-700 dark:text-slate-200 ${className}`}>
       <span className="h-2.5 w-2.5 shrink-0 rounded-full" style={{ backgroundColor: storeDot(store) }} />
       {store.name}
     </span>
@@ -53,13 +53,13 @@ export function StoreBadge({ store, className = "" }) {
 export function StockBadge({ inStock, compact = false }) {
   if (inStock) {
     return (
-      <span className="inline-flex items-center gap-1 rounded-full bg-emerald-50 px-2 py-0.5 text-xs font-semibold text-emerald-700">
+      <span className="inline-flex items-center gap-1 rounded-full bg-emerald-50 dark:bg-emerald-500/10 px-2 py-0.5 text-xs font-semibold text-emerald-700 dark:text-emerald-300">
         <CheckCircle2 className="h-3.5 w-3.5" /> {compact ? "In stock" : "In stock"}
       </span>
     );
   }
   return (
-    <span className="inline-flex items-center gap-1 rounded-full bg-slate-100 px-2 py-0.5 text-xs font-semibold text-slate-500">
+    <span className="inline-flex items-center gap-1 rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-0.5 text-xs font-semibold text-slate-500 dark:text-slate-400">
       <X className="h-3.5 w-3.5" /> Out of stock
     </span>
   );
@@ -68,9 +68,9 @@ export function StockBadge({ inStock, compact = false }) {
 export function IssueList({ issues }) {
   if (!issues?.length) return null;
   const style = {
-    error: ["border-rose-200 bg-rose-50 text-rose-800", CircleAlert],
-    warning: ["border-amber-200 bg-amber-50 text-amber-900", AlertTriangle],
-    info: ["border-sky-200 bg-sky-50 text-sky-900", Info],
+    error: ["border-rose-200 dark:border-rose-500/30 bg-rose-50 dark:bg-rose-500/10 text-rose-800 dark:text-rose-200", CircleAlert],
+    warning: ["border-amber-200 dark:border-amber-500/30 bg-amber-50 dark:bg-amber-500/10 text-amber-900 dark:text-amber-100", AlertTriangle],
+    info: ["border-sky-200 dark:border-sky-500/30 bg-sky-50 dark:bg-sky-500/10 text-sky-900 dark:text-sky-100", Info],
   };
   return (
     <ul className="space-y-2">
@@ -98,7 +98,7 @@ export function ProductImage({ src, category, alt = "", className = "" }) {
   const Icon = CATEGORY[category]?.icon || EXTRA_ICONS[category] || Package;
   if (!src || failed) {
     return (
-      <div className={`flex items-center justify-center bg-slate-100 text-slate-400 ${className}`}>
+      <div className={`flex items-center justify-center bg-slate-100 dark:bg-slate-800 text-slate-400 ${className}`}>
         {Icon ? <Icon className="h-1/3 w-1/3" /> : null}
       </div>
     );
@@ -121,7 +121,7 @@ export function Avatar({ user, size = "h-10 w-10", className = "" }) {
     return <img src={user.avatar_url} alt="" className={`${size} rounded-full object-cover ${className}`} />;
   }
   return (
-    <div className={`${size} flex items-center justify-center rounded-full bg-indigo-100 font-semibold text-indigo-700 ${className}`}>
+    <div className={`${size} flex items-center justify-center rounded-full bg-indigo-100 dark:bg-indigo-500/20 font-semibold text-indigo-700 dark:text-indigo-300 ${className}`}>
       {initials}
     </div>
   );
@@ -145,12 +145,12 @@ export function Modal({ open, onClose, title, children, wide = false }) {
         role="dialog"
         aria-modal="true"
         aria-label={title}
-        className={`max-h-[92vh] w-full overflow-y-auto rounded-t-2xl bg-white shadow-xl sm:rounded-2xl ${wide ? "sm:max-w-3xl" : "sm:max-w-md"}`}
+        className={`max-h-[92vh] w-full overflow-y-auto rounded-t-2xl bg-white dark:bg-slate-900 shadow-xl sm:rounded-2xl ${wide ? "sm:max-w-3xl" : "sm:max-w-md"}`}
         onClick={(e) => e.stopPropagation()}
       >
-        <div className="sticky top-0 z-10 flex items-center justify-between border-b border-slate-100 bg-white px-5 py-4">
+        <div className="sticky top-0 z-10 flex items-center justify-between border-b border-slate-100 dark:border-slate-800 bg-white dark:bg-slate-900 px-5 py-4">
           <h2 className="text-lg font-semibold">{title}</h2>
-          <button className="rounded-lg p-1 text-slate-400 hover:bg-slate-100 hover:text-slate-700" onClick={onClose} aria-label="Close">
+          <button className="rounded-lg p-1 text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-slate-700 dark:hover:text-slate-200" onClick={onClose} aria-label="Close">
             <X className="h-5 w-5" />
           </button>
         </div>
@@ -175,7 +175,7 @@ export function Pagination({ page, pages, onChange }) {
           key={n}
           onClick={() => onChange(n)}
           aria-current={n === page ? "page" : undefined}
-          className={`h-9 min-w-9 rounded-lg px-2 text-sm font-semibold ${n === page ? "bg-indigo-600 text-white" : "text-slate-600 hover:bg-slate-100"}`}
+          className={`h-9 min-w-9 rounded-lg px-2 text-sm font-semibold ${n === page ? "bg-indigo-600 text-white" : "text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800"}`}
         >
           {n}
         </button>
@@ -193,8 +193,8 @@ export function Field({ label, children, hint, error }) {
     <label className="block">
       <span className="label">{label}</span>
       {children}
-      {hint && !error && <span className="mt-1 block text-xs text-slate-500">{hint}</span>}
-      {error && <span className="mt-1 block text-xs text-rose-600">{error}</span>}
+      {hint && !error && <span className="mt-1 block text-xs text-slate-500 dark:text-slate-400">{hint}</span>}
+      {error && <span className="mt-1 block text-xs text-rose-600 dark:text-rose-400">{error}</span>}
     </label>
   );
 }

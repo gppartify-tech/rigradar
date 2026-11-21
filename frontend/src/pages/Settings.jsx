@@ -6,7 +6,7 @@ import { useAuth } from "../lib/auth";
 import { useApi } from "../lib/useApi";
 
 function Saved({ show }) {
-  return show ? <span className="text-sm font-medium text-emerald-700">Saved ✓</span> : null;
+  return show ? <span className="text-sm font-medium text-emerald-700 dark:text-emerald-300">Saved ✓</span> : null;
 }
 
 export default function Settings() {
