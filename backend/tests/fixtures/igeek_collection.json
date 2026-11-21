@@ -1,0 +1,609 @@
+{
+ "products": [
+  {
+   "id": 8799221481697,
+   "title": "AMD Ryzen 7 9700X AM5 CPU Processor (Tray) – 8 Cores, 16 Threads, Up to 5.5GHz, 32MB Cache",
+   "handle": "amd-ryzen-7-9700x-up-to-5-5ghz-8-cores-16-threads-32mb-cache-am5-cpu-processor-tray",
+   "body_html": "<p>The <strong>AMD Ryzen 7 9700X</strong> is an advanced 8-core, 16-thread processor designed to deliver excellent performance for gamers, content creators, and multitasking professionals. Built on AM",
+   "published_at": "2024-12-10T17:42:26+03:00",
+   "created_at": "2024-12-10T17:42:26+03:00",
+   "updated_at": "2026-11-20T09:26:29+03:00",
+   "vendor": "AMD",
+   "product_type": "Cpu",
+   "tags": [],
+   "variants": [
+    {
+     "id": 45983106171105,
+     "title": "Default Title",
+     "option1": "Default Title",
+     "option2": null,
+     "option3": null,
+     "sku": "9700X",
+     "requires_shipping": true,
+     "taxable": true,
+     "featured_image": null,
+     "available": true,
+     "price": "269.000",
+     "grams": 0,
+     "compare_at_price": null,
+     "position": 2,
+     "product_id": 8799221481697,
+     "created_at": "2024-12-10T17:42:27+03:00",
+     "updated_at": "2026-11-20T09:26:29+03:00"
+    }
+   ],
+   "images": [
+    {
+     "id": 44041009135841,
+     "created_at": "2024-12-10T17:39:56+03:00",
+     "position": 1,
+     "updated_at": "2024-12-10T17:39:57+03:00",
+     "product_id": 8799221481697,
+     "variant_ids": [],
+     "src": "https://cdn.shopify.com/s/files/1/2507/5448/files/ezgif.com-webp-to-jpg-1200x1200_1_b0aa1173-91c5-4eab-8015-34614a3a86f2.png?v=1733841597",
+     "width": 1200,
+     "height": 1200
+    },
+    {
+     "id": 44041009168609,
+     "created_at": "2024-12-10T17:39:56+03:00",
+     "position": 2,
+     "updated_at": "2024-12-10T17:39:57+03:00",
+     "product_id": 8799221481697,
+     "variant_ids": [],
+     "src": "https://cdn.shopify.com/s/files/1/2507/5448/files/AM5-1200x1200_1_87c28eff-a2e7-4e06-9636-609d1f5167aa.png?v=1733841597",
+     "width": 1200,
+     "height": 1200
+    }
+   ],
+   "options": [
+    {
+     "name": "Title",
+     "position": 1,
+     "values": [
+      "Default Title"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 8872406483169,
+   "title": "AMD Ryzen 7 7800X3D Processor – 8 Cores, 96MB Cache, Up to 5.0GHz, AM5, Tray",
+   "handle": "amd-ryzen-7-7800x3d-8-core-5-0-ghz-96mb-cache-am5-tray",
+   "body_html": "<table class=\"table\">\n<thead>\n<tr>\n<th colspan=\"2\">Specifications</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td width=\"30%\">Processor Family</td>\n<td>Ryzen 7</td>\n</tr>\n<tr>\n<td width=\"30%\">Processor Socket</t",
+   "published_at": "2025-03-09T16:58:59+03:00",
+   "created_at": "2025-03-09T16:58:59+03:00",
+   "updated_at": "2026-11-20T09:26:29+03:00",
+   "vendor": "AMD",
+   "product_type": "Cpu",
+   "tags": [],
+   "variants": [
+    {
+     "id": 46238683693281,
+     "title": "Default Title",
+     "option1": "Default Title",
+     "option2": null,
+     "option3": null,
+     "sku": "7800X3D",
+     "requires_shipping": true,
+     "taxable": true,
+     "featured_image": null,
+     "available": true,
+     "price": "299.000",
+     "grams": 0,
+     "compare_at_price": null,
+     "position": 1,
+     "product_id": 8872406483169,
+     "created_at": "2025-03-09T16:59:01+03:00",
+     "updated_at": "2026-11-20T09:26:29+03:00"
+    }
+   ],
+   "images": [
+    {
+     "id": 44803339223265,
+     "created_at": "2025-03-09T16:58:38+03:00",
+     "position": 1,
+     "updated_at": "2025-03-09T16:58:40+03:00",
+     "product_id": 8872406483169,
+     "variant_ids": [],
+     "src": "https://cdn.shopify.com/s/files/1/2507/5448/files/7800X3D-1200x1200.png?v=1741528720",
+     "width": 1200,
+     "height": 1200
+    },
+    {
+     "id": 44803339157729,
+     "created_at": "2025-03-09T16:58:38+03:00",
+     "position": 2,
+     "updated_at": "2025-03-09T16:58:39+03:00",
+     "product_id": 8872406483169,
+     "variant_ids": [],
+     "src": "https://cdn.shopify.com/s/files/1/2507/5448/files/790003-1200x1200_1.png?v=1741528719",
+     "width": 1200,
+     "height": 1200
+    },
+    {
+     "id": 44803339190497,
+     "created_at": "2025-03-09T16:58:38+03:00",
+     "position": 3,
+     "updated_at": "2025-03-09T16:58:39+03:00",
+     "product_id": 8872406483169,
+     "variant_ids": [],
+     "src": "https://cdn.shopify.com/s/files/1/2507/5448/files/790002-1200x1200_1.png?v=1741528719",
+     "width": 1200,
+     "height": 1200
+    }
+   ],
+   "options": [
+    {
+     "name": "Title",
+     "position": 1,
+     "values": [
+      "Default Title"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 8926866768097,
+   "title": "AMD Ryzen 7 7700X Processor – AM5, Zen 4, 8 Cores, Up to 5.4GHz, Box",
+   "handle": "amd-ryzen-7-7700x-am5-5-4ghz-zen-4-cpu-processor-box",
+   "body_html": "<table class=\"table\">\n<thead>\n<tr>\n<th colspan=\"2\">CPU &amp; Processor Specifications</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td width=\"30%\">Processor Family</td>\n<td>Ryzen 7</td>\n</tr>\n<tr>\n<td width=\"30%\"",
+   "published_at": "2025-05-07T16:18:54+03:00",
+   "created_at": "2025-05-07T16:18:54+03:00",
+   "updated_at": "2026-11-20T09:26:29+03:00",
+   "vendor": "AMD",
+   "product_type": "Cpu",
+   "tags": [],
+   "variants": [
+    {
+     "id": 46421878866145,
+     "title": "Default Title",
+     "option1": "Default Title",
+     "option2": null,
+     "option3": null,
+     "sku": "7700X",
+     "requires_shipping": true,
+     "taxable": true,
+     "featured_image": null,
+     "available": false,
+     "price": "259.000",
+     "grams": 0,
+     "compare_at_price": null,
+     "position": 1,
+     "product_id": 8926866768097,
+     "created_at": "2025-05-07T16:18:56+03:00",
+     "updated_at": "2026-11-20T09:26:29+03:00"
+    }
+   ],
+   "images": [
+    {
+     "id": 45617008771297,
+     "created_at": "2025-05-07T16:18:21+03:00",
+     "position": 1,
+     "updated_at": "2025-05-07T16:18:22+03:00",
+     "product_id": 8926866768097,
+     "variant_ids": [],
+     "src": "https://cdn.shopify.com/s/files/1/2507/5448/files/7700xxxx-1200x1200.png?v=1746623902",
+     "width": 1200,
+     "height": 1200
+    },
+    {
+     "id": 45617008738529,
+     "created_at": "2025-05-07T16:18:21+03:00",
+     "position": 2,
+     "updated_at": "2025-05-07T16:18:22+03:00",
+     "product_id": 8926866768097,
+     "variant_ids": [],
+     "src": "https://cdn.shopify.com/s/files/1/2507/5448/files/790002-1200x1200_21fb4e2f-db2b-4d3a-ab4b-5416ddcde3b6.png?v=1746623902",
+     "width": 1200,
+     "height": 1200
+    }
+   ],
+   "options": [
+    {
+     "name": "Title",
+     "position": 1,
+     "values": [
+      "Default Title"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 10436308762849,
+   "title": "ASUS ROG-ASTRAL-RTX5090-P32G-EDITION-20 - Graphics Card (SHOWROOM ONLY)",
+   "handle": "rog-astral-rtx5090-p32g-edition-20-graphics-card",
+   "body_html": "<p><strong>* This product is not available online, for more info please visit us at showroom for details</strong></p>\n<p> </p>\n<table class=\"nOQsj\" data-processed=\"true\">\n<tbody>\n<tr class=\"l2uqvb\" da",
+   "published_at": "2026-11-12T13:57:07+03:00",
+   "created_at": "2026-11-12T13:57:05+03:00",
+   "updated_at": "2026-11-20T09:23:05+03:00",
+   "vendor": "Asus",
+   "product_type": "Gpu",
+   "tags": [],
+   "variants": [
+    {
+     "id": 51478526689505,
+     "title": "Default Title",
+     "option1": "Default Title",
+     "option2": null,
+     "option3": null,
+     "sku": "90YV0NF3-M0NA00",
+     "requires_shipping": true,
+     "taxable": true,
+     "featured_image": null,
+     "available": true,
+     "price": "0.000",
+     "grams": 0,
+     "compare_at_price": null,
+     "position": 1,
+     "product_id": 10436308762849,
+     "created_at": "2026-11-12T13:57:05+03:00",
+     "updated_at": "2026-11-20T09:23:05+03:00"
+    }
+   ],
+   "images": [
+    {
+     "id": 55850698572001,
+     "created_at": "2026-11-12T14:37:15+03:00",
+     "position": 1,
+     "updated_at": "2026-11-12T14:37:16+03:00",
+     "product_id": 10436308762849,
+     "variant_ids": [],
+     "src": "https://cdn.shopify.com/s/files/1/2507/5448/files/904178660_1487473820145900_2126837643343831386_n_5c63a82b-03c7-412a-a42f-5f2672a5268a.jpg?v=1794483436",
+     "width": 1122,
+     "height": 1402
+    },
+    {
+     "id": 55850566123745,
+     "created_at": "2026-11-12T13:55:57+03:00",
+     "position": 2,
+     "updated_at": "2026-11-12T13:55:59+03:00",
+     "product_id": 10436308762849,
+     "variant_ids": [],
+     "src": "https://cdn.shopify.com/s/files/1/2507/5448/files/11e4d9746bb5f803fbd7ef8813890c37.png?v=1794480959",
+     "width": 1000,
+     "height": 1000
+    },
+    {
+     "id": 55850566287585,
+     "created_at": "2026-11-12T13:55:57+03:00",
+     "position": 3,
+     "updated_at": "2026-11-12T13:55:59+03:00",
+     "product_id": 10436308762849,
+     "variant_ids": [],
+     "src": "https://cdn.shopify.com/s/files/1/2507/5448/files/319d000fd63e4d5b26add719097fbe6c.png?v=1794480959",
+     "width": 1000,
+     "height": 1000
+    },
+    {
+     "id": 55850566385889,
+     "created_at": "2026-11-12T13:55:57+03:00",
+     "position": 4,
+     "updated_at": "2026-11-12T13:55:59+03:00",
+     "product_id": 10436308762849,
+     "variant_ids": [],
+     "src": "https://cdn.shopify.com/s/files/1/2507/5448/files/1c2be91331c7d7a6f4da7aba1600aef6.png?v=1794480959",
+     "width": 1000,
+     "height": 1000
+    },
+    {
+     "id": 55850565894369,
+     "created_at": "2026-11-12T13:55:57+03:00",
+     "position": 5,
+     "updated_at": "2026-11-12T13:55:59+03:00",
+     "product_id": 10436308762849,
+     "variant_ids": [],
+     "src": "https://cdn.shopify.com/s/files/1/2507/5448/files/c2a1d1f840e99846aaf9801732b3a675.png?v=1794480959",
+     "width": 1000,
+     "height": 1000
+    },
+    {
+     "id": 55850565927137,
+     "created_at": "2026-11-12T13:55:57+03:00",
+     "position": 6,
+     "updated_at": "2026-11-12T13:55:59+03:00",
+     "product_id": 10436308762849,
+     "variant_ids": [],
+     "src": "https://cdn.shopify.com/s/files/1/2507/5448/files/904787711afe3dcba9694c98e806120c.png?v=1794480959",
+     "width": 1000,
+     "height": 1000
+    },
+    {
+     "id": 55850565992673,
+     "created_at": "2026-11-12T13:55:57+03:00",
+     "position": 7,
+     "updated_at": "2026-11-12T13:55:59+03:00",
+     "product_id": 10436308762849,
+     "variant_ids": [],
+     "src": "https://cdn.shopify.com/s/files/1/2507/5448/files/962bfefd3df6659c0ba925d8bb3a71d2.png?v=1794480959",
+     "width": 1000,
+     "height": 1000
+    },
+    {
+     "id": 55850566025441,
+     "created_at": "2026-11-12T13:55:57+03:00",
+     "position": 8,
+     "updated_at": "2026-11-12T13:55:59+03:00",
+     "product_id": 10436308762849,
+     "variant_ids": [],
+     "src": "https://cdn.shopify.com/s/files/1/2507/5448/files/740db4ec56195f27b4bd7fe1e97349b2.png?v=1794480959",
+     "width": 1000,
+     "height": 1000
+    },
+    {
+     "id": 55850566058209,
+     "created_at": "2026-11-12T13:55:57+03:00",
+     "position": 9,
+     "updated_at": "2026-11-12T13:55:59+03:00",
+     "product_id": 10436308762849,
+     "variant_ids": [],
+     "src": "https://cdn.shopify.com/s/files/1/2507/5448/files/337cd46631b6bc1fe20c368c726830a4.png?v=1794480959",
+     "width": 1000,
+     "height": 1000
+    },
+    {
+     "id": 55850566090977,
+     "created_at": "2026-11-12T13:55:57+03:00",
+     "position": 10,
+     "updated_at": "2026-11-12T13:55:59+03:00",
+     "product_id": 10436308762849,
+     "variant_ids": [],
+     "src": "https://cdn.shopify.com/s/files/1/2507/5448/files/21a587ae2c2789e4c8d2ccad98c3c1c5.png?v=1794480959",
+     "width": 1000,
+     "height": 1000
+    },
+    {
+     "id": 55850566156513,
+     "created_at": "2026-11-12T13:55:57+03:00",
+     "position": 11,
+     "updated_at": "2026-11-12T13:55:59+03:00",
+     "product_id": 10436308762849,
+     "variant_ids": [],
+     "src": "https://cdn.shopify.com/s/files/1/2507/5448/files/8ae17c58122db70bbffa5bfc7c187239.png?v=1794480959",
+     "width": 1000,
+     "height": 1000
+    },
+    {
+     "id": 55850566189281,
+     "created_at": "2026-11-12T13:55:57+03:00",
+     "position": 12,
+     "updated_at": "2026-11-12T13:55:59+03:00",
+     "product_id": 10436308762849,
+     "variant_ids": [],
+     "src": "https://cdn.shopify.com/s/files/1/2507/5448/files/b86148b3cc1128dd33526af566bcd2e1.png?v=1794480959",
+     "width": 1000,
+     "height": 1000
+    },
+    {
+     "id": 55850566254817,
+     "created_at": "2026-11-12T13:55:57+03:00",
+     "position": 13,
+     "updated_at": "2026-11-12T13:55:59+03:00",
+     "product_id": 10436308762849,
+     "variant_ids": [],
+     "src": "https://cdn.shopify.com/s/files/1/2507/5448/files/651b34506e5a04e8951970c5754678a7.png?v=1794480959",
+     "width": 1000,
+     "height": 1000
+    },
+    {
+     "id": 55850566320353,
+     "created_at": "2026-11-12T13:55:57+03:00",
+     "position": 14,
+     "updated_at": "2026-11-12T13:55:59+03:00",
+     "product_id": 10436308762849,
+     "variant_ids": [],
+     "src": "https://cdn.shopify.com/s/files/1/2507/5448/files/148cdcb4129b19f6b506679f717fcd48.png?v=1794480959",
+     "width": 1000,
+     "height": 1000
+    },
+    {
+     "id": 55850566353121,
+     "created_at": "2026-11-12T13:55:57+03:00",
+     "position": 15,
+     "updated_at": "2026-11-12T13:55:59+03:00",
+     "product_id": 10436308762849,
+     "variant_ids": [],
+     "src": "https://cdn.shopify.com/s/files/1/2507/5448/files/78fbb99a962392884d38b67f2c0b49d0.png?v=1794480959",
+     "width": 1000,
+     "height": 1000
+    },
+    {
+     "id": 55850566418657,
+     "created_at": "2026-11-12T13:55:57+03:00",
+     "position": 16,
+     "updated_at": "2026-11-12T13:55:59+03:00",
+     "product_id": 10436308762849,
+     "variant_ids": [],
+     "src": "https://cdn.shopify.com/s/files/1/2507/5448/files/0fb3b62115956778c6ec468d5230f2f0.png?v=1794480959",
+     "width": 1000,
+     "height": 1000
+    },
+    {
+     "id": 55850566451425,
+     "created_at": "2026-11-12T13:55:57+03:00",
+     "position": 17,
+     "updated_at": "2026-11-12T13:55:59+03:00",
+     "product_id": 10436308762849,
+     "variant_ids": [],
+     "src": "https://cdn.shopify.com/s/files/1/2507/5448/files/0c88bd369c9a65f1584f0f7f2b1d12e3.png?v=1794480959",
+     "width": 1000,
+     "height": 1000
+    },
+    {
+     "id": 55850566222049,
+     "created_at": "2026-11-12T13:55:57+03:00",
+     "position": 18,
+     "updated_at": "2026-11-12T13:55:59+03:00",
+     "product_id": 10436308762849,
+     "variant_ids": [],
+     "src": "https://cdn.shopify.com/s/files/1/2507/5448/files/9275991432d843615a4505e0b0343f1e.png?v=1794480959",
+     "width": 1000,
+     "height": 1000
+    },
+    {
+     "id": 55850565959905,
+     "created_at": "2026-11-12T13:55:57+03:00",
+     "position": 19,
+     "updated_at": "2026-11-12T13:55:59+03:00",
+     "product_id": 10436308762849,
+     "variant_ids": [],
+     "src": "https://cdn.shopify.com/s/files/1/2507/5448/files/3256fa85b0174d4115723b54db82572e.png?v=1794480959",
+     "width": 1000,
+     "height": 1000
+    }
+   ],
+   "options": [
+    {
+     "name": "Title",
+     "position": 1,
+     "values": [
+      "Default Title"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 9538816082145,
+   "title": "ASUS TUF Gaming GeForce RTX 5060 8GB GDDR7 OC Edition Graphics Card",
+   "handle": "asus-tuf-gaming-geforce-rtx™-5060-8gb-gddr7-oc-edition-graphics-card",
+   "body_html": "<div class=\"otQkpb\" role=\"heading\" data-animation-nesting=\"\" data-sfc-cp=\"\" data-sfc-root=\"ep\" data-sfc-cb=\"\" data-complete=\"true\" data-processed=\"true\" data-sae=\"\">Key Specifications</div>\n<ul class=",
+   "published_at": "2026-07-06T19:44:10+03:00",
+   "created_at": "2026-07-06T19:44:08+03:00",
+   "updated_at": "2026-11-20T09:23:05+03:00",
+   "vendor": "Asus",
+   "product_type": "Gpu",
+   "tags": [],
+   "variants": [
+    {
+     "id": 48625511399649,
+     "title": "Default Title",
+     "option1": "Default Title",
+     "option2": null,
+     "option3": null,
+     "sku": "90YV0N00-M0NA00",
+     "requires_shipping": true,
+     "taxable": true,
+     "featured_image": null,
+     "available": true,
+     "price": "479.000",
+     "grams": 0,
+     "compare_at_price": "449.000",
+     "position": 1,
+     "product_id": 9538816082145,
+     "created_at": "2026-07-06T19:44:08+03:00",
+     "updated_at": "2026-11-20T09:23:05+03:00"
+    }
+   ],
+   "images": [
+    {
+     "id": 49298429739233,
+     "created_at": "2026-07-06T19:43:03+03:00",
+     "position": 1,
+     "updated_at": "2026-07-06T19:43:05+03:00",
+     "product_id": 9538816082145,
+     "variant_ids": [],
+     "src": "https://cdn.shopify.com/s/files/1/2507/5448/files/download_8_e60ee4ba-9ab8-49fe-8b8b-4702f1bf3ff2.png?v=1783356185",
+     "width": 800,
+     "height": 800
+    },
+    {
+     "id": 49298429772001,
+     "created_at": "2026-07-06T19:43:03+03:00",
+     "position": 2,
+     "updated_at": "2026-07-06T19:43:04+03:00",
+     "product_id": 9538816082145,
+     "variant_ids": [],
+     "src": "https://cdn.shopify.com/s/files/1/2507/5448/files/download_7_a861031f-f3b0-4233-a994-f60f6415402d.png?v=1783356184",
+     "width": 800,
+     "height": 800
+    },
+    {
+     "id": 49298429706465,
+     "created_at": "2026-07-06T19:43:03+03:00",
+     "position": 3,
+     "updated_at": "2026-07-06T19:43:05+03:00",
+     "product_id": 9538816082145,
+     "variant_ids": [],
+     "src": "https://cdn.shopify.com/s/files/1/2507/5448/files/download_afd40b31-101d-40e3-af80-4f25e02ed872.png?v=1783356185",
+     "width": 2560,
+     "height": 1304
+    },
+    {
+     "id": 49298429870305,
+     "created_at": "2026-07-06T19:43:03+03:00",
+     "position": 4,
+     "updated_at": "2026-07-06T19:43:04+03:00",
+     "product_id": 9538816082145,
+     "variant_ids": [],
+     "src": "https://cdn.shopify.com/s/files/1/2507/5448/files/download_4_5a2ae51f-fb3e-4a56-ab5d-924507440f43.png?v=1783356184",
+     "width": 800,
+     "height": 800
+    },
+    {
+     "id": 49298429804769,
+     "created_at": "2026-07-06T19:43:03+03:00",
+     "position": 5,
+     "updated_at": "2026-07-06T19:43:04+03:00",
+     "product_id": 9538816082145,
+     "variant_ids": [],
+     "src": "https://cdn.shopify.com/s/files/1/2507/5448/files/download_6_1abf8e32-0c09-4886-8ceb-ad9ac6b45651.png?v=1783356184",
+     "width": 800,
+     "height": 800
+    },
+    {
+     "id": 49298429837537,
+     "created_at": "2026-07-06T19:43:03+03:00",
+     "position": 6,
+     "updated_at": "2026-07-06T19:43:04+03:00",
+     "product_id": 9538816082145,
+     "variant_ids": [],
+     "src": "https://cdn.shopify.com/s/files/1/2507/5448/files/download_5_bc3328fe-6c33-46a6-ab3b-9e1362b8c04e.png?v=1783356184",
+     "width": 800,
+     "height": 800
+    },
+    {
+     "id": 49298429903073,
+     "created_at": "2026-07-06T19:43:03+03:00",
+     "position": 7,
+     "updated_at": "2026-07-06T19:43:05+03:00",
+     "product_id": 9538816082145,
+     "variant_ids": [],
+     "src": "https://cdn.shopify.com/s/files/1/2507/5448/files/download_3_6e3f09e9-fc08-479a-80d5-6a829361b6b1.png?v=1783356185",
+     "width": 800,
+     "height": 800
+    },
+    {
+     "id": 49298429935841,
+     "created_at": "2026-07-06T19:43:03+03:00",
+     "position": 8,
+     "updated_at": "2026-07-06T19:43:04+03:00",
+     "product_id": 9538816082145,
+     "variant_ids": [],
+     "src": "https://cdn.shopify.com/s/files/1/2507/5448/files/download_2_b4664d19-f560-4801-9f4a-cd1f85ec6e19.png?v=1783356184",
+     "width": 800,
+     "height": 800
+    },
+    {
+     "id": 49298429968609,
+     "created_at": "2026-07-06T19:43:03+03:00",
+     "position": 9,
+     "updated_at": "2026-07-06T19:43:04+03:00",
+     "product_id": 9538816082145,
+     "variant_ids": [],
+     "src": "https://cdn.shopify.com/s/files/1/2507/5448/files/download_1_d51058f3-cb56-40fe-95da-ab91b0ad3b2d.png?v=1783356184",
+     "width": 800,
+     "height": 800
+    }
+   ],
+   "options": [
+    {
+     "name": "Title",
+     "position": 1,
+     "values": [
+      "Default Title"
+     ]
+    }
+   ]
+  }
+ ]
+}

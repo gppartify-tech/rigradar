@@ -1,0 +1,28 @@
+# --- Web API ---
+fastapi==0.165.0
+uvicorn[standard]>=0.32
+python-multipart>=0.0.20
+email-validator>=2.2
+pydantic-settings>=2.6
+# --- Database ---
+sqlalchemy>=2.0.36,<2.2
+psycopg[binary]>=3.2
+alembic>=1.14
+# --- Auth ---
+pyjwt>=2.10
+argon2-cffi>=23.1
+# --- Background jobs ---
+celery[redis]>=5.5
+redis>=5.2
+# --- Scraping ---
+playwright==1.65.2
+beautifulsoup4>=4.12
+lxml>=5.3
+rapidfuzz>=3.10
+# --- Chatbot (optional: falls back to the built-in recommender without an API key) ---
+anthropic>=0.75
+# --- Misc ---
+pillow>=11.0
+httpx>=0.28
+# --- Tests ---
+pytest>=8.3
