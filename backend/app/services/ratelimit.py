@@ -24,7 +24,7 @@ def hit(bucket: str, limit: int, window_seconds: int) -> None:
     """Raise 429 when `bucket` was hit more than `limit` times in the current window.
     If Redis is down the request is allowed (fail open) - availability over strictness."""
     window = int(time.time() // window_seconds)
-    key = f"rigradar:rl:{bucket}:{window}"
+    key = f"partify:rl:{bucket}:{window}"
     try:
         client = _redis()
         count = client.incr(key)

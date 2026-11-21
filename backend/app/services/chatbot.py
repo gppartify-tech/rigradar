@@ -81,7 +81,7 @@ TOOLS = [
     {
         "name": "recommend_build",
         "description": (
-            "Build a complete, compatible PC from in-stock parts for a budget, using RigRadar's recommender "
+            "Build a complete, compatible PC from in-stock parts for a budget, using Partify's recommender "
             "(budget split by use case, socket/RAM/PSU/case compatibility checks). Call this when the user wants "
             "a full build or asks what they can get for a budget. Returns the parts, prices, total and notes."
         ),

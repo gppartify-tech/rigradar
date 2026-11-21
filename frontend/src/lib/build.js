@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useState } from "react";
 
 // The PC builder keeps the chosen part ids in localStorage: { cpu: 12, gpu: 40, ... }
-const KEY = "rigradar_build";
+const KEY = "partify_build";
 const EVENT = "build:change";
 
 function read() {

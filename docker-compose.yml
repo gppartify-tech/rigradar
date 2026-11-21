@@ -1,4 +1,4 @@
-# RigRadar - the whole stack with one command:
+# Partify - the whole stack with one command:
 #     cp .env.example .env      (then edit it)
 #     docker compose up --build
 # Website:        http://localhost:8080

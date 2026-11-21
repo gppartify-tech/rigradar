@@ -90,7 +90,7 @@ Disallow: /checkout$
     ("https://x.jo/checkout/step2", True),    # "$" anchors the end
 ])
 def test_robots_rules(url, allowed):
-    assert RobotsRules(ROBOTS).can_fetch("RigRadarBot", url) is allowed
+    assert RobotsRules(ROBOTS).can_fetch("PartifyBot", url) is allowed
 
 
 def test_robots_named_group_overrides_star():

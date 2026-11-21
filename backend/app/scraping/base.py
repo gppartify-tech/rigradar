@@ -29,7 +29,7 @@ from app.scraping.robots import ALLOW_ALL, RobotsRules
 
 log = logging.getLogger(__name__)
 
-BOT_NAME = "RigRadarBot"
+BOT_NAME = "PartifyBot"
 BLOCKED_RESOURCE_TYPES = {"image", "media", "font", "stylesheet", "texttrack", "manifest"}
 
 

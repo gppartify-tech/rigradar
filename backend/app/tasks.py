@@ -18,7 +18,7 @@ from app.scraping.runner import run_scrape
 from app.services.email import send_notification_email
 
 log = logging.getLogger(__name__)
-LOCK_NAME = "rigradar:scrape-lock"
+LOCK_NAME = "partify:scrape-lock"
 
 
 def _queue_emails(notification_ids: list[int]) -> None:

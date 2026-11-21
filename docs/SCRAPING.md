@@ -1,6 +1,6 @@
 # Choosing and scraping the stores
 
-This document explains which stores RigRadar scrapes, why, and how – useful for the
+This document explains which stores Partify scrapes, why, and how – useful for the
 "methodology" chapter of the graduation report. All findings were checked live on
 **20 November 2026**.
 
@@ -59,7 +59,7 @@ index is "search"; the data is never used to train AI models.
 | Follow robots.txt | `robots.py` implements RFC 9309 (wildcards `*`, `$`, longest match wins); every URL is checked before it is requested |
 | Be gentle | ≥ 2.5 s (+ random jitter) between requests to the same store; one store at a time; one full scrape every 6 hours |
 | Download only what we need | images, fonts, stylesheets, media and any third-party request (analytics, ads) are aborted in the browser |
-| Identify ourselves | user agent contains `RigRadarBot/1.0; academic price-comparison project` |
+| Identify ourselves | user agent contains `PartifyBot/1.0; academic price-comparison project` |
 | Never bypass protection | HTTP 403/429 or a "Just a moment" challenge page stops the store's scrape immediately |
 | Fail safely | network errors are retried twice with back-off; a crashed or blocked run is recorded on the admin page |
 

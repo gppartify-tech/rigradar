@@ -151,7 +151,7 @@ function Navbar() {
           <span className="rounded-xl bg-indigo-600 p-1.5">
             <Radar className="h-5 w-5" />
           </span>
-          <span className="text-lg font-extrabold tracking-tight">RigRadar</span>
+          <span className="text-lg font-extrabold tracking-tight">Partify</span>
           <span className="hidden rounded-md bg-slate-800 px-1.5 py-0.5 text-[10px] font-bold text-slate-300 sm:inline">JO</span>
         </Link>
         <SearchBox className="hidden max-w-md flex-1 md:block" />
@@ -235,7 +235,7 @@ function Footer() {
       <div className="container-page grid gap-8 py-10 md:grid-cols-3">
         <div>
           <div className="flex items-center gap-2 font-extrabold">
-            <Radar className="h-5 w-5 text-indigo-600 dark:text-indigo-400" /> RigRadar
+            <Radar className="h-5 w-5 text-indigo-600 dark:text-indigo-400" /> Partify
           </div>
           <p className="mt-2 text-sm text-slate-500 dark:text-slate-400">
             Compare PC part prices across Jordanian stores, get alerts when prices drop, plan your build with an AI
@@ -264,7 +264,7 @@ function Footer() {
         </div>
       </div>
       <div className="border-t border-slate-100 dark:border-slate-800 py-4 text-center text-xs text-slate-400">
-        RigRadar · Graduation project · Prices in Jordanian Dinar (JOD)
+        Partify · Graduation project · Prices in Jordanian Dinar (JOD)
       </div>
     </footer>
   );

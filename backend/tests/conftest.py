@@ -15,7 +15,7 @@ os.environ["DATABASE_URL"] = os.environ.get(
 os.environ["ANTHROPIC_API_KEY"] = ""
 os.environ["SMTP_HOST"] = ""
 os.environ["SEED_SAMPLE_DATA"] = "false"
-os.environ["UPLOAD_DIR"] = tempfile.mkdtemp(prefix="rigradar-uploads-")
+os.environ["UPLOAD_DIR"] = tempfile.mkdtemp(prefix="partify-uploads-")
 os.environ["REDIS_URL"] = os.environ.get("TEST_REDIS_URL", "redis://localhost:6379/15")
 
 import pytest  # noqa: E402

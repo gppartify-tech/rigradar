@@ -97,7 +97,7 @@ export default function ListingPage() {
                 {listing.seller_contact.phone && (
                   <a href={`tel:${listing.seller_contact.phone}`} className="btn btn-primary w-full"><Phone className="h-4 w-4" /> {listing.seller_contact.phone}</a>
                 )}
-                <a href={`mailto:${listing.seller_contact.email}?subject=${encodeURIComponent(`RigRadar: ${listing.title}`)}`} className="btn btn-secondary w-full">
+                <a href={`mailto:${listing.seller_contact.email}?subject=${encodeURIComponent(`Partify: ${listing.title}`)}`} className="btn btn-secondary w-full">
                   <Mail className="h-4 w-4" /> E-mail the seller
                 </a>
               </div>

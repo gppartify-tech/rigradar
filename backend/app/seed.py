@@ -168,7 +168,7 @@ def seed_demo_users(db: Session) -> dict:
     for username, name, city, bio, listings in DEMO_USERS:
         user = db.scalar(select(User).where(User.username == username))
         if user is None:
-            user = User(email=f"{username}@demo.rigradar.local", username=username, display_name=name,
+            user = User(email=f"{username}@demo.partify.local", username=username, display_name=name,
                         city=city, bio=bio, password_hash=hash_password(DEMO_PASSWORD))
             db.add(user)
             db.flush()

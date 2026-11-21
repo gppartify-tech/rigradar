@@ -48,7 +48,7 @@ export default function Marketplace() {
       <div className="flex flex-wrap items-end justify-between gap-4">
         <div>
           <h1 className="text-2xl font-bold tracking-tight sm:text-3xl">Marketplace</h1>
-          <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">Used and new parts sold by RigRadar members across Jordan.</p>
+          <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">Used and new parts sold by Partify members across Jordan.</p>
         </div>
         <Link to="/marketplace/new" className="btn btn-primary"><Plus className="h-4 w-4" /> Sell an item</Link>
       </div>

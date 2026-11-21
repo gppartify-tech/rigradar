@@ -16,13 +16,13 @@
       // Apply the saved/system theme before the page paints (avoids a white flash in dark mode).
       (function () {
         try {
-          var saved = localStorage.getItem("rigradar_theme");
+          var saved = localStorage.getItem("partify_theme");
           var dark = saved ? saved === "dark" : window.matchMedia("(prefers-color-scheme: dark)").matches;
           if (dark) document.documentElement.classList.add("dark");
         } catch (e) {}
       })();
     </script>
-    <title>RigRadar - PC part prices in Jordan</title>
+    <title>Partify - PC part prices in Jordan</title>
   </head>
   <body>
     <div id="root"></div>

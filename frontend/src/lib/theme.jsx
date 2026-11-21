@@ -5,7 +5,7 @@ import { createContext, useCallback, useContext, useEffect, useMemo, useState } 
 // - After a click the choice is remembered in localStorage.
 // - Dark mode = the "dark" class on <html>; Tailwind's `dark:` variants key off it.
 //   (index.html sets the class before the first paint, so there is no white flash.)
-const KEY = "rigradar_theme";
+const KEY = "partify_theme";
 const systemQuery = () => window.matchMedia("(prefers-color-scheme: dark)");
 
 function storedChoice() {

@@ -1,6 +1,6 @@
-# RigRadar 🇯🇴 — PC part price comparison for Jordan
+# Partify 🇯🇴 — PC part price comparison for Jordan
 
-RigRadar compares PC-part prices across three Jordanian stores, tracks every price
+Partify compares PC-part prices across three Jordanian stores, tracks every price
 change, alerts users when a part reaches their target price, helps them plan a build
 with an AI assistant, and lets them sell their own used parts.
 
@@ -275,7 +275,7 @@ docker-compose.yml       postgres, redis, mailpit, api, worker, beat, frontend
 
 ## Responsible scraping & limitations
 - Only public product listings are read, at a gentle rate, following robots.txt, with an honest
-  user agent (`RigRadarBot`). Every product links back to the store. Oriental Store's robots.txt
+  user agent (`PartifyBot`). Every product links back to the store. Oriental Store's robots.txt
   says `ai-train=no` – the data is never used to train models.
 - Prices can change between scrapes – the site always says when a store was last checked.
 - Product matching is heuristic. Some identical parts may appear twice and, rarely, two variants may be

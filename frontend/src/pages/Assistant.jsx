@@ -6,7 +6,7 @@ import { ProductCard } from "../components/ProductCard";
 import { api } from "../lib/api";
 import { useApi } from "../lib/useApi";
 
-const KEY = "rigradar_chat";
+const KEY = "partify_chat";
 const SUGGESTIONS = [
   "I want a gaming PC for about 1200 JOD, mostly Valorant and Warzone at 1440p",
   "What's the cheapest RTX 5060 right now?",

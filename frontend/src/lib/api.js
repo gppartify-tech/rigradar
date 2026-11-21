@@ -3,7 +3,7 @@
 // - turns query params objects into ?a=1&b=2 (arrays become repeated keys)
 // - throws ApiError with the server's error message
 
-const TOKEN_KEY = "rigradar_token";
+const TOKEN_KEY = "partify_token";
 
 export function getToken() {
   try {

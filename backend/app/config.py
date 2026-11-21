@@ -13,7 +13,7 @@ class Settings(BaseSettings):
     model_config = SettingsConfigDict(env_file=".env", extra="ignore")
 
     # --- General ---
-    app_name: str = "RigRadar"
+    app_name: str = "Partify"
     environment: str = "development"
     secret_key: str = "dev-secret-change-me-in-production-please-32+chars"
     access_token_expire_minutes: int = 60 * 24 * 7  # 7 days
@@ -36,7 +36,7 @@ class Settings(BaseSettings):
     # Pause between two page requests to the same store (be polite!).
     scrape_delay_seconds: float = 2.5
     scraper_user_agent: str = (
-        "Mozilla/5.0 (compatible; RigRadarBot/1.0; academic price-comparison project)"
+        "Mozilla/5.0 (compatible; PartifyBot/1.0; academic price-comparison project)"
     )
     scraper_headless: bool = True
     # Only needed when the Playwright browser is installed in a custom location.
@@ -53,7 +53,7 @@ class Settings(BaseSettings):
     smtp_port: int = 587
     smtp_user: str | None = None
     smtp_password: str | None = None
-    smtp_from: str = "RigRadar <alerts@rigradar.local>"
+    smtp_from: str = "Partify <alerts@partify.local>"
     smtp_starttls: bool = True
     smtp_ssl: bool = False
 
